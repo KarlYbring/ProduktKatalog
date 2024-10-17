@@ -6,9 +6,7 @@ namespace Resources.Interfaces
     public interface IProductService
     {
         ResultStatus AddProduct(Product product);
-        ResultStatus UpdateProduct(Product product);
         ResultStatus DeleteProduct(Product product);
         IEnumerable<Product> GetAllProducts();
-
     }
 }

@@ -65,7 +65,6 @@ public class ProductService : IProductService
     }
     public ResultStatus DeleteProduct(Product product)
     {
-        
         try
         {
             var content = _fileService.GetFromFile();
@@ -74,12 +73,12 @@ public class ProductService : IProductService
             {
                 _productList = JsonConvert.DeserializeObject<List<Product>>(content)!;
             }
-            if (string.IsNullOrEmpty(product.ProductName))
+            if (string.IsNullOrEmpty(product.ProductId))
             {
                 Console.WriteLine("You did not enter a product name");
                 return ResultStatus.Failed;
             }
-            var removeProduct = _productList.FirstOrDefault(p => p.ProductName.ToLower() == product.ProductName.ToLower());
+            var removeProduct = _productList.FirstOrDefault(p => p.ProductId == product.ProductId);
 
             if (removeProduct == null)
             {
@@ -99,14 +98,5 @@ public class ProductService : IProductService
         {
             return ResultStatus.Failed;
         }
-    }
-    public ResultStatus UpdateProduct(Product product)
-    {
-        throw new NotImplementedException();
-    }
-
-    public ResultStatus GetProduct(Product product)
-    {
-        throw new NotImplementedException();
     }
 }

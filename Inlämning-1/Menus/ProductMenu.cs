@@ -78,14 +78,30 @@ internal class ProductMenu
     }
     public void DeleteMenu()
     {
-        var product = new Product();
-        
+        var productList = _productService.GetAllProducts();
+        var removeProduct = new Product();
+
         Console.WriteLine("\nRemove a product");
+
+        if (!productList.Any())
+        {
+            Console.WriteLine("No products in list\n");
+        }
+        else
+        {
+            foreach (Product product in productList)
+            {
+                Console.WriteLine($"\nCategory: {product.ProductCategory}");
+                Console.WriteLine($"Product: {product.ProductName}");
+                Console.WriteLine($"Price: {product.ProductPrice}:-");
+                Console.WriteLine($"Product Id: {product.ProductId}");
+            }
+        }
         Console.Write("Enter product name to remove: ");
 
-        product.ProductName = Console.ReadLine()??"";
+        removeProduct.ProductId = Console.ReadLine()??"";
 
-        var answer = _productService.DeleteProduct(product);
+        var answer = _productService.DeleteProduct(removeProduct);
 
         Console.WriteLine("\nPress any key to continue.");
         Console.ReadKey();

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inlämning-1", "Inlämning-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resources", "Resources\Resources.csproj", "{E41CD0F7-98B3-4019-9E04-EB948691EF3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources.Tests", "Resources.Tests\Resources.Tests.csproj", "{81572853-55D3-4BC1-B46D-03F2001E47A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resources.Tests", "Resources.Tests\Resources.Tests.csproj", "{81572853-55D3-4BC1-B46D-03F2001E47A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
