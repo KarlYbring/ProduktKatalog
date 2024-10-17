@@ -12,7 +12,7 @@ internal class ProductMenu
         Product product = new Product();
 
         Console.Clear();
-        Console.WriteLine("Create new product");
+        Console.WriteLine("Create new product\n");
 
         Console.Write("Enter Product Name: ");
         product.ProductName = Console.ReadLine() ?? "";
@@ -47,11 +47,11 @@ internal class ProductMenu
         var productList = _productService.GetAllProducts();
 
         Console.Clear();
-        Console.WriteLine("View all products\n");
+        Console.WriteLine("Products");
 
         if (!productList.Any())
         {
-            Console.WriteLine("No products in list\n");
+            Console.WriteLine("\nNo products in list");
         }
         else
         {
@@ -78,10 +78,11 @@ internal class ProductMenu
     }
     public void DeleteMenu()
     {
+        Console.Clear();
         var productList = _productService.GetAllProducts();
         var removeProduct = new Product();
 
-        Console.WriteLine("\nRemove a product");
+        Console.WriteLine("Remove a product");
 
         if (!productList.Any())
         {
@@ -97,7 +98,7 @@ internal class ProductMenu
                 Console.WriteLine($"Product Id: {product.ProductId}");
             }
         }
-        Console.Write("Enter product name to remove: ");
+        Console.Write("\nEnter product name to remove: ");
 
         removeProduct.ProductId = Console.ReadLine()??"";
 

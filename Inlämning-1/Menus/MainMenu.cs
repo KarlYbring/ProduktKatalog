@@ -33,7 +33,7 @@ public class Menu
                _productMenu.ExitMenu();
                 break;
             default:
-                Console.WriteLine("You need to 1enter an option");
+                Console.WriteLine("You need to enter an option");
                 Console.ReadKey();
                 break;
         }
